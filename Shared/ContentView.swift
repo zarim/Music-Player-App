@@ -29,7 +29,6 @@ struct ContentView: View {
         .onAppear() {
             requestAccess { auth in
                 if auth {
-//                    print(AppleMusicAPI().fetchStorefrontID())
                     DispatchQueue.global(qos: .background).async {
                        print(AppleMusicAPI().fetchStorefrontID())
                     }
