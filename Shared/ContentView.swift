@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct ContentView: View {
     var body: some View {
@@ -23,7 +24,31 @@ struct ContentView: View {
                 Text("Search")
             }
             
-        }.accentColor(.black)
+        }
+        .accentColor(.black)
+        .onAppear() {
+            requestAccess { auth in
+                if auth {
+//                    print(AppleMusicAPI().fetchStorefrontID())
+                    DispatchQueue.global(qos: .background).async {
+                       print(AppleMusicAPI().fetchStorefrontID())
+                    }
+                }
+            }
+        }
+    }
+}
+
+func requestAccess(_ completion: @escaping(Bool) -> Void) {
+    SKCloudServiceController.requestAuthorization { (status) in
+        switch status {
+        case .authorized:
+            completion(true)
+        case .denied, .notDetermined, .restricted:
+            completion(false)
+        @unknown default:
+            completion(false)
+        }
     }
 }
 
