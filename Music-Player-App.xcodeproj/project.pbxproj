@@ -20,6 +20,7 @@
 		595A3ECD26A1353100D02F30 /* SpotifyAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595A3ECC26A1353100D02F30 /* SpotifyAuth.swift */; };
 		59604A8C26A21DC6008BAB97 /* AppleMusicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A8B26A21DC6008BAB97 /* AppleMusicAPI.swift */; };
 		59604A8E26A21DE3008BAB97 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A8D26A21DE3008BAB97 /* SwiftyJSON.swift */; };
+		59604A9026A221AD008BAB97 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A8F26A221AD008BAB97 /* Song.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		595A3ED626A140E000D02F30 /* Music-Player-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Music-Player-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		59604A8B26A21DC6008BAB97 /* AppleMusicAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicAPI.swift; sourceTree = "<group>"; };
 		59604A8D26A21DE3008BAB97 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Pods/SwiftyJSON/Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
+		59604A8F26A221AD008BAB97 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		C03613957E9108C93847837B /* Pods-Music-Player-App (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music-Player-App (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Music-Player-App (iOS)/Pods-Music-Player-App (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 				2914258A269F7FD70065E67E /* Music_Player_AppApp.swift */,
 				2914258B269F7FD70065E67E /* ContentView.swift */,
 				59604A8B26A21DC6008BAB97 /* AppleMusicAPI.swift */,
+				59604A8F26A221AD008BAB97 /* Song.swift */,
 				59604A8D26A21DE3008BAB97 /* SwiftyJSON.swift */,
 				2914258C269F7FDA0065E67E /* Assets.xcassets */,
 			);
@@ -269,6 +272,7 @@
 				595A3ECD26A1353100D02F30 /* SpotifyAuth.swift in Sources */,
 				595A3EC326A1108800D02F30 /* ListenView.swift in Sources */,
 				2914259D269F7FDA0065E67E /* Music_Player_AppApp.swift in Sources */,
+				59604A9026A221AD008BAB97 /* Song.swift in Sources */,
 				595A3EB826A0F7C900D02F30 /* Podcasts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
