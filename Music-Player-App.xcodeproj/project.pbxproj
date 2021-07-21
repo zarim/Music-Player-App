@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,11 @@
 		59604A8C26A21DC6008BAB97 /* AppleMusicAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A8B26A21DC6008BAB97 /* AppleMusicAPI.swift */; };
 		59604A8E26A21DE3008BAB97 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A8D26A21DE3008BAB97 /* SwiftyJSON.swift */; };
 		59604A9026A221AD008BAB97 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A8F26A221AD008BAB97 /* Song.swift */; };
+		59604A9326A5C6BD008BAB97 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59604A9226A5C6BD008BAB97 /* SDWebImageSwiftUI */; };
+		59604A9526A72FF0008BAB97 /* MusicAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A9426A72FF0008BAB97 /* MusicAPIModel.swift */; };
+		59604A9726A74EE2008BAB97 /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A9626A74EE2008BAB97 /* MusicViewModel.swift */; };
+		59604A9926A77C5F008BAB97 /* StorefrontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A9826A77C5F008BAB97 /* StorefrontModel.swift */; };
+		59604A9B26A7A5EF008BAB97 /* SearchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59604A9A26A7A5EF008BAB97 /* SearchState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +60,10 @@
 		59604A8B26A21DC6008BAB97 /* AppleMusicAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicAPI.swift; sourceTree = "<group>"; };
 		59604A8D26A21DE3008BAB97 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Pods/SwiftyJSON/Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		59604A8F26A221AD008BAB97 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		59604A9426A72FF0008BAB97 /* MusicAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicAPIModel.swift; sourceTree = "<group>"; };
+		59604A9626A74EE2008BAB97 /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
+		59604A9826A77C5F008BAB97 /* StorefrontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorefrontModel.swift; sourceTree = "<group>"; };
+		59604A9A26A7A5EF008BAB97 /* SearchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchState.swift; sourceTree = "<group>"; };
 		C03613957E9108C93847837B /* Pods-Music-Player-App (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music-Player-App (iOS).debug.xcconfig"; path = "Target Support Files/Pods-Music-Player-App (iOS)/Pods-Music-Player-App (iOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59604A9326A5C6BD008BAB97 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +101,9 @@
 				2914258B269F7FD70065E67E /* ContentView.swift */,
 				59604A8B26A21DC6008BAB97 /* AppleMusicAPI.swift */,
 				59604A8F26A221AD008BAB97 /* Song.swift */,
+				59604A9426A72FF0008BAB97 /* MusicAPIModel.swift */,
+				59604A9826A77C5F008BAB97 /* StorefrontModel.swift */,
+				59604A9626A74EE2008BAB97 /* MusicViewModel.swift */,
 				59604A8D26A21DE3008BAB97 /* SwiftyJSON.swift */,
 				2914258C269F7FDA0065E67E /* Assets.xcassets */,
 			);
@@ -154,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				595A3EC226A1108800D02F30 /* ListenView.swift */,
+				59604A9A26A7A5EF008BAB97 /* SearchState.swift */,
 			);
 			path = Listen;
 			sourceTree = "<group>";
@@ -184,6 +198,9 @@
 			dependencies = (
 			);
 			name = "Music-Player-App (iOS)";
+			packageProductDependencies = (
+				59604A9226A5C6BD008BAB97 /* SDWebImageSwiftUI */,
+			);
 			productName = "Music-Player-App (iOS)";
 			productReference = 29142591269F7FDA0065E67E /* Music-Player-App.app */;
 			productType = "com.apple.product-type.application";
@@ -211,6 +228,9 @@
 				Base,
 			);
 			mainGroup = 29142584269F7FD70065E67E;
+			packageReferences = (
+				59604A9126A5C6BD008BAB97 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 29142592269F7FDA0065E67E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,16 +281,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59604A9726A74EE2008BAB97 /* MusicViewModel.swift in Sources */,
 				595A3EB526A0F61400D02F30 /* Moods.swift in Sources */,
 				595A3EC626A110D800D02F30 /* SearchView.swift in Sources */,
 				2914259F269F7FDA0065E67E /* ContentView.swift in Sources */,
 				59604A8E26A21DE3008BAB97 /* SwiftyJSON.swift in Sources */,
 				59604A8C26A21DC6008BAB97 /* AppleMusicAPI.swift in Sources */,
 				595A3EBE26A10DDF00D02F30 /* BrowseView.swift in Sources */,
+				59604A9926A77C5F008BAB97 /* StorefrontModel.swift in Sources */,
 				595A3EBB26A0F84500D02F30 /* Artists.swift in Sources */,
+				59604A9B26A7A5EF008BAB97 /* SearchState.swift in Sources */,
 				595A3EB226A0F44F00D02F30 /* BrowseMenuItem.swift in Sources */,
 				595A3ECD26A1353100D02F30 /* SpotifyAuth.swift in Sources */,
 				595A3EC326A1108800D02F30 /* ListenView.swift in Sources */,
+				59604A9526A72FF0008BAB97 /* MusicAPIModel.swift in Sources */,
 				2914259D269F7FDA0065E67E /* Music_Player_AppApp.swift in Sources */,
 				59604A9026A221AD008BAB97 /* Song.swift in Sources */,
 				595A3EB826A0F7C900D02F30 /* Podcasts.swift in Sources */,
@@ -478,6 +502,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59604A9126A5C6BD008BAB97 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59604A9226A5C6BD008BAB97 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59604A9126A5C6BD008BAB97 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29142585269F7FD70065E67E /* Project object */;
 }

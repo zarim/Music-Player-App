@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct BrowseView: View {
-    @State private var search: String = ""
     @State var moodsClicked = true
     @State var artistClicked = false
     @State var podcastsClicked = false
@@ -30,7 +29,7 @@ struct BrowseView: View {
                                 (moodsClicked, artistClicked, podcastsClicked) = didTap(item: .moods)
                             }, label: {
                                 Text(item.title)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.white)
                                     .opacity(moodsClicked ? 1 : 0.5)
                                 Spacer()
                                 }
@@ -40,7 +39,7 @@ struct BrowseView: View {
                                 (moodsClicked, artistClicked, podcastsClicked) = didTap(item: .artists)
                             }, label: {
                                 Text(item.title)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.white)
                                     .opacity(artistClicked ? 1 : 0.5)
                                 Spacer()
                                 }
@@ -50,7 +49,7 @@ struct BrowseView: View {
                                 (moodsClicked, artistClicked, podcastsClicked) = didTap(item: .podcasts)
                             }, label: {
                                 Text(item.title)
-                                    .foregroundColor(.black)
+                                    .foregroundColor(.white)
                                     .opacity(podcastsClicked ? 1 : 0.5)
                                 Spacer()
                                 }

@@ -7,34 +7,36 @@
 
 import SwiftUI
 import StoreKit
+import MediaPlayer
 
 struct ContentView: View {
+    @ObservedObject var model: MusicViewModel = MusicViewModel()
+    @State private var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     var body: some View {
         TabView {
             BrowseView().tabItem {
                 Image("HOME")
+                    .renderingMode(.template)
+                    .foregroundColor(.white)
                 Text("Home")
             }
-            ListenView().tabItem {
+            
+            ListenView(model: model).tabItem {
                 Image("HEADPHONES")
+                    .renderingMode(.template)
+                    .foregroundColor(.white)
                 Text("Listen")
             }
-            SearchView().tabItem {
+            
+            SearchView(model: model).tabItem {
                 Image("MAGNIFYING GLASS")
+                    .renderingMode(.template)
+                    .foregroundColor(.white)
                 Text("Search")
             }
             
         }
-        .accentColor(.black)
-        .onAppear() {
-            requestAccess { auth in
-                if auth {
-                    DispatchQueue.global(qos: .background).async {
-                       print(AppleMusicAPI().fetchStorefrontID())
-                    }
-                }
-            }
-        }
+        .accentColor(.white)
     }
 }
 
@@ -48,11 +50,5 @@ func requestAccess(_ completion: @escaping(Bool) -> Void) {
         @unknown default:
             completion(false)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
