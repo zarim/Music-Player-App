@@ -70,7 +70,7 @@ class AppleMusicAPI {
             lock1.signal()
         }
         lock1.wait()
-        
+
         var musicRequest = URLRequest(url: URL(string: "https://api.music.apple.com/v1/catalog/\(storefront)/search?term=\(cleanSearch)&limit=25&types=songs,artists,albums")!)
         musicRequest.httpMethod = "GET"
         musicRequest.addValue("Bearer \(developerToken)", forHTTPHeaderField: "Authorization")

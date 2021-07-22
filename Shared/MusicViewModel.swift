@@ -15,18 +15,11 @@ final class MusicViewModel: ObservableObject {
     @Published var song: SongData?
     @Published var progress: Float = 0.0
     @Published var state: SearchState?
-    
-    init() {
-        state = .loading
-    }
-    
+
     func search(search: String) {
-        DispatchQueue.global(qos: .background).async {
-            self.state = .loading
-            AppleMusicAPI().searchAppleMusic(search) { data, state in
-                self.searchResults = data
-                self.state = state
-            }
+        AppleMusicAPI().searchAppleMusic(search) { data, state in
+            self.searchResults = data
+            self.state = state
         }
     }
     

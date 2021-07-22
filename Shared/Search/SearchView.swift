@@ -21,18 +21,15 @@ struct SearchView: View {
             HStack {
                 TextField("Search", text: $search, onCommit: {
                     UIApplication.shared.resignFirstResponder()
-                    if search.isEmpty {
-                        model.search(search: "")
-                    } else {
-                        requestAccess { auth in
-                            if auth {
-                                DispatchQueue.global(qos: .background).async {
-                                    model.search(search: search)
-                                }
+                    model.state = .loading
+                    requestAccess { auth in
+                        if auth {
+                            DispatchQueue.global(qos: .background).async {
+                                model.search(search: search)
                             }
                         }
-                        showResults = true
                     }
+                    showResults = true
                 })
                 if search != "" {
                     Button(action: {
